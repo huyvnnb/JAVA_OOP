@@ -3,39 +3,36 @@ import java.util.stream.Collectors;
 import java.util.List;
 
 public class OfficerManagement {
+    List<Officer> officers;
 
-    ArrayList<Officer> officers = new ArrayList<>();
+    public OfficerManagement(){
+        this.officers = new ArrayList<>();
+    }
     public void addOfficer(Officer officer){
-        officers.add(officer);
+        this.officers.add(officer);
     }
 
-    public Officer findName(String names){
-        boolean canFind = false;
-        Officer officer = null;
-        for (Officer value : officers) {
-            if (value.name.contains(names)) {
-                canFind = true;
-                officer = value;
-                break;
-            }
-        }
-        if(!canFind){
-            System.out.println("Cannot find!");
-            //return null;
-        }
-        return officer;
+    public List<Officer> findOfficerByName(String name){
+        return this.officers.stream().filter(o -> o.getName().contains(name)).collect(Collectors.toList());
+//        boolean canFind = false;
+//        Officer officer = null;
+//        for (Officer value : officers) {
+//            if (value.name.contains(names)) {
+//                canFind = true;
+//                officer = value;
+//                break;
+//            }
+//        }
+//        if(!canFind){
+//            System.out.println("Cannot find!");
+//            //return null;
+//        }
+//        return officer;
     }
 
-    public void printInfo(Officer value){
-        System.out.println("Name: " + value.getName() +
-                "\tAge: " + value.getAge() +
-                "\tGender: " + value.getGender() +
-                "\tAddress: " + value.getAddress());
-    }
-
-    public void printAllInfo(){
-        for(Officer value : officers){
-            printInfo(value);
+    public void showOfficerInfo(){
+        for(Officer officer : officers){
+            System.out.println(officer.toString());
         }
     }
 }
