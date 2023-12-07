@@ -26,6 +26,7 @@ public class Main {
 
                 case 2:
                     System.out.println("Find officer");
+                    sc.nextLine();
                     String finder = sc.nextLine();
 
                     officer = om.findName(finder);
