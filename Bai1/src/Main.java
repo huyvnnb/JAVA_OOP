@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         OfficerManagement om = new OfficerManagement();
         boolean quit = false;
-        while(!quit){
+        while (!quit) {
             System.out.println("--------------------------------");
             System.out.println("OFFICER MANAGEMENT");
             System.out.println("1. Add new officer.");
@@ -15,7 +15,7 @@ public class Main {
             System.out.println("---------------------------------");
             System.out.print("Enter your choice: ");
             String choice = sc.nextLine();
-            switch (choice){
+            switch (choice) {
                 case "1":
                     System.out.println("a. Staff.");
                     System.out.println("b. Engineer.");
@@ -25,11 +25,17 @@ public class Main {
                     switch (type) {
                         case "a":
                             System.out.println("STAFF INFORMATION");
-                            System.out.print("Enter name: "); String name = sc.nextLine();
-                            System.out.print("Enter age: "); int age = sc.nextInt(); sc.nextLine();
-                            System.out.print("Enter gender (male/female/other): "); String gender = sc.nextLine();
-                            System.out.print("Enter your address: "); String address = sc.nextLine();
-                            System.out.print("Enter your task: "); String task = sc.nextLine();
+                            System.out.print("Enter name: ");
+                            String name = sc.nextLine();
+                            System.out.print("Enter age: ");
+                            int age = sc.nextInt();
+                            sc.nextLine();
+                            System.out.print("Enter gender (male/female/other): ");
+                            String gender = sc.nextLine();
+                            System.out.print("Enter your address: ");
+                            String address = sc.nextLine();
+                            System.out.print("Enter your task: ");
+                            String task = sc.nextLine();
 
                             Officer staff = new Staff(name, age, gender, address, task);
                             om.addOfficer(staff);
@@ -37,11 +43,17 @@ public class Main {
 
                         case "b":
                             System.out.println("ENGINEER INFORMATION");
-                            System.out.print("Enter name: "); name = sc.nextLine();
-                            System.out.print("Enter age: "); age = sc.nextInt(); sc.nextLine();
-                            System.out.print("Enter gender (male/female/other): "); gender = sc.nextLine();
-                            System.out.print("Enter your address: "); address = sc.nextLine();
-                            System.out.print("Enter your major: "); String major = sc.nextLine();
+                            System.out.print("Enter name: ");
+                            name = sc.nextLine();
+                            System.out.print("Enter age: ");
+                            age = sc.nextInt();
+                            sc.nextLine();
+                            System.out.print("Enter gender (male/female/other): ");
+                            gender = sc.nextLine();
+                            System.out.print("Enter your address: ");
+                            address = sc.nextLine();
+                            System.out.print("Enter your major: ");
+                            String major = sc.nextLine();
 
                             Officer engineer = new Enginneer(name, age, gender, address, major);
                             om.addOfficer(engineer);
