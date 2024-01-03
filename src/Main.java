@@ -12,7 +12,7 @@ class Node {
     }
 }
 class BinarySearchTree {
-    int size;
+    final int size;
     Node root;
     BinarySearchTree(){
         size = 0;
